@@ -1,0 +1,6 @@
+/work2/10189/jasonlee/frontera/OpenFOAM1/cavity_Re10_160
+Thu Feb 12 16:27:49 CST 2026
+Running blockMesh on /work2/10189/jasonlee/frontera/OpenFOAM1/cavity_Re10_160
+Running checkMesh on /work2/10189/jasonlee/frontera/OpenFOAM1/cavity_Re10_160
+Running icoFoam on /work2/10189/jasonlee/frontera/OpenFOAM1/cavity_Re10_160
+Thu Feb 12 16:29:33 CST 2026
