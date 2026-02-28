@@ -1,0 +1,24 @@
+Person B Next Steps for A2 Circular Cylinder
+
+Base cases (meshA and meshB) are now runnable on Frontera with OpenFOAM 7.
+
+What is already completed:
+- Mesh generated using blockMeshDict.example
+- 2D setup complete (frontAndBack patch type empty)
+- transportProperties created with Newtonian model
+- turbulenceProperties set to laminar
+- fvSchemes updated so pisoFoam runs
+- Smoke test completed: pisoFoam runs to Time = 1 and writes forceCoeffs
+
+Important notes:
+- Default nu is currently set to 0.05 (Re = 20 with U=1, D=1)
+- For each Reynolds number, set:
+      nu = 1/Re
+- Probes file contains a location warning for (0 0 0); update probe points as needed
+
+Tasks:
+- Adjust blockMeshDict resolution for final Mesh A and Mesh B per assignment requirements
+- Run steady case for Re = 20
+- Run unsteady case for Re = 110
+- Extract drag and lift coefficients
+- Generate required plots and probe histories
