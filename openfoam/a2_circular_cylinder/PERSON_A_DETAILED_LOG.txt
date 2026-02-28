@@ -1,0 +1,30 @@
+Detailed Record Marco's Work so Far
+
+Environment:
+- Frontera
+- OpenFOAM 7
+
+Steps completed:
+
+1. Cloned class repository and copied circular-cylinder base case.
+2. Created meshA and meshB directories.
+3. Filled placeholders in system/controlDict (endTime, deltaT, writeInterval).
+4. Generated mesh using blockMeshDict.example.
+5. Renamed defaultFaces to frontAndBack in constant/polyMesh/boundary.
+6. Updated 0/U and 0/p to include frontAndBack with type empty.
+7. Created constant/transportProperties with:
+       transportModel Newtonian
+       nu = 0.05 (default Re = 20)
+8. Created constant/turbulenceProperties with:
+       simulationType laminar
+9. Added missing divScheme entry in system/fvSchemes:
+       div((nuEff*dev2(T(grad(U))))) Gauss linear;
+10. Performed solver smoke test using pisoFoam.
+11. Confirmed solver runs to Time = 1 and writes forces and forceCoeffs.
+12. Committed and pushed all required configuration files.
+
+Case status:
+- Runnable
+- 2D
+- Solver verified
+- Ready for Reynolds number studies
