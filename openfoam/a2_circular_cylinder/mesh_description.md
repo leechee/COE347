@@ -1,23 +1,38 @@
-# Preliminary Meshes for Circular Cylinder
+# Computational Domain Schematic
 
-## Mesh A
-Mesh A is the coarse preliminary mesh used for the low Reynolds number steady simulation.
-The mesh contains 10230 cells and uses a thin 3D domain with front and back boundaries
-defined as empty so the flow is solved as two dimensional.
+The computational domain represents 2D incompressible flow over a circular cylinder.
 
-The domain extends from x = -4 to x = 6 and y = -4 to y = 4.
+Domain dimensions
 
-## Mesh B
-Mesh B is the refined preliminary mesh used for the unsteady simulation.
-The mesh contains 20050 cells and also uses a thin 3D domain with front
-and back boundaries defined as empty.
+x direction: -4 to 6  
+y direction: -4 to 4  
 
-The geometry and grading provide increased resolution in the cylinder
-region and wake.
+Cylinder
 
-## Included Files
-Each mesh directory includes:
-- system/blockMeshDict
-- blockMesh output
-- checkMesh output
-- exported boundary file confirming frontAndBack is empty
+center: (0, 0)  
+radius: 0.5  
+
+Boundary conditions
+
+inlet: uniform velocity inlet  
+outlet: zero gradient outlet  
+top: symmetryPlane  
+bottom: symmetryPlane  
+cylinder: no slip wall  
+frontAndBack: empty (2D simulation)
+
+ASCII schematic of the domain
+
+        top (symmetryPlane)
+        y = 4
+        ----------------------------------------
+        |                                      |
+        |                                      |
+inlet   |             O  cylinder              |   outlet
+x = -4  |                                      |   x = 6
+        |                                      |
+        ----------------------------------------
+        y = -4
+        bottom (symmetryPlane)
+
+The mesh is generated using blockMesh with structured blocks and grading near the cylinder and wake region. Mesh A contains approximately 10^4 cells and Mesh B contains approximately 2×10^4 cells for improved resolution of unsteady vortex shedding.
