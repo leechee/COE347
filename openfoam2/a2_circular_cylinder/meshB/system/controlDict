@@ -49,11 +49,3 @@ runTimeModifiable true;
 
 
 // ************************************************************************* //
-
-functions 
-{ 
-    #includeFunc  probes 
-    #includeFunc  singleGraph 
-    #includeFunc  forces 
-    #includeFunc  forceCoeffs 
-}
