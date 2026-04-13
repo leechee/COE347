@@ -1,0 +1,3 @@
+We measured the sideways velocity (Uy) at two points located at (x = 5.5, y = +0.5) and (x = 5.5, y = −0.5). At first, the graph looks messy because the flow is still adjusting from the starting condition. After about t ≈ 75, the pattern becomes steady and repeats over time. This means the flow has started forming regular swirls behind the cylinder.
+
+The two points go up and down in opposite ways, which shows that the swirls are forming one after another on different sides of the cylinder. This pattern is called a von Kármán vortex street. This tells us that the simulation has reached a steady repeating flow at Re = 110.
