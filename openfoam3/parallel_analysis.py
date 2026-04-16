@@ -66,7 +66,11 @@ print(f"Run:     t = 0 to 0.3 s, maxCo = 0.2, {STEPS} time steps")
 # -----------------------------------------------------------------------
 fig, ax = plt.subplots(figsize=(8, 6))
 
-ax.plot(P_arr, speedup, 'b-o', lw=2, ms=7)
+P_ref = np.array([1, 2, 4, 8, 16, 32, 56], dtype=float)
+ax.plot(P_ref, P_ref,         'k--', lw=1.5, label='Ideal')
+ax.plot(P_ref, 0.80 * P_ref, 'g--', lw=1.5, label='80% efficient')
+ax.plot(P_ref, 0.60 * P_ref, 'r--', lw=1.5, label='60% efficient')
+ax.plot(P_arr, speedup, 'b-o', lw=2, ms=7, label='Actual')
 
 ax.set_xlabel('Number of Processors (P)', fontsize=12)
 ax.set_ylabel('Speedup', fontsize=12)
@@ -74,6 +78,7 @@ ax.set_title('Speedup vs Number of Processors', fontsize=13)
 ax.set_xticks([1, 2, 4, 8, 16, 32, 56])
 ax.set_ylim(0, max(speedup) * 1.3)
 ax.grid(True, alpha=0.3)
+ax.legend(fontsize=11)
 
 plt.tight_layout()
 out_path = os.path.join(BASE, "speedup_plot.png")
