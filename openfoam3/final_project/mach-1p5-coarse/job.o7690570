@@ -1,0 +1,5 @@
+Running blockMesh on /work2/10189/jasonlee/frontera/COE347/openfoam3/final_project/mach-1p5-coarse
+Running checkMesh on /work2/10189/jasonlee/frontera/COE347/openfoam3/final_project/mach-1p5-coarse
+Running decomposePar on /work2/10189/jasonlee/frontera/COE347/openfoam3/final_project/mach-1p5-coarse
+Running rhoCentralFoam in parallel on /work2/10189/jasonlee/frontera/COE347/openfoam3/final_project/mach-1p5-coarse using 4 processes
+Running reconstructPar on /work2/10189/jasonlee/frontera/COE347/openfoam3/final_project/mach-1p5-coarse
